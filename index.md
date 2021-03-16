@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+### Avinash Singh 👋
 
-You can use the [editor on GitHub](https://github.com/avinashkrsingh/avinashkrsingh9.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<a href="https://github.com/avinashkrsingh">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=avinashkrsingh&show_icons=true&theme=graywhite&count_private=true" alt="avinashkrsingh's github stats" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=avinashkrsingh&theme=graywhite&layout=compact" alt="avinashkrsingh's github top languages" />
+</a>
+<img align='right' src="https://media.giphy.com/media/KzJkzjggfGN5Py6nkT/giphy.gif" width="200">
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[![Linkedin Badge](https://img.shields.io/badge/-avinashkrsingh-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/avinash-kumar-singh-b3003029/)](https://www.linkedin.com/in/avinash-kumar-singh-b3003029/) 
+[![Gmail Badge](https://img.shields.io/badge/-avinashkrsingh9@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:avinashkrsingh9@gmail.com)](avinashkrsingh9@gmail.com)
+[![Docker Badge](https://img.shields.io/badge/Docker-Docker%20Hub-orange)](https://hub.docker.com/u/avinashkrsingh)
 
-### Markdown
+---
+## Hi  Welcome to DevOps World!👋
+---
+I am  Avinash Singh, a Senior Automation/DevOps Engineer passionate about Iac,PaaS, CI CD, Containerization, Infrastructure Automation and many more. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+- :computer: I code in Java, Typescript,Javascript and bash.
+- 🌱 I’m currently learning SRE practices and DevOps processes along with new Tools like ,Copado,pulumi,cockroachDB, yogabyteDB,neo4j etc
+- 👯 I’m looking for different ways of Infrastructure Automation, DevOps improvements ,  DevOps using AI.
+- 💬 Ask me about Ansible, DevOps Releated query , UI Automation, chatbot Automation etc.
+- ⚡ Fun fact: Moody, Jovial Person ..
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/avinashkrsingh/avinashkrsingh9.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.

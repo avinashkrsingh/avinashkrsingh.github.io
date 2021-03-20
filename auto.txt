@@ -1,0 +1,276 @@
+Given(/^user enter zip code "([^"]*)" and date "([^"]*)" click on get started button$/, {timeout: 300 * 2000}, async function (Zip,date){
+    var stepStatus = ''; status = await new commons().clearStepStatus();
+    logMsg ='user enter zip code "([^"]*)" and click on get started button'+Zip;     
+    try{       
+        if (config.essentials.accessibility === true) {
+            let accessResults = await new operations().existPlusAccessibility(this.driver, '', xpath);
+            let accessReportName = 'accessbilityReport|' + Math.random() + '|' + config.essentials.scenario;
+            var temp_access_report_list = [];
+            if (config.essentials.report['access_report_list']) { temp_access_report_list = config.essentials.report['access_report_list']; }
+            temp_access_report_list.push(accessReportName);
+            config.essentials.report['access_report_list'] = temp_access_report_list;
+            config.essentials.report[accessReportName] = accessResults;
+        }
+       await new operations().wait(this.driver,5000);
+        xpath_radio=await dbretrieve.getORxpath_desktop(this.OR,"CVS_Minute_Clinic_Home_Page","wln_seekingTestRsn_radioBtn",browser_type); 
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_radio);
+        status=await new operations().click(this.driver,'',xpath_radio);
+        status=await new operations().wait(this.driver,5000);    
+      
+        xpath_zip=await dbretrieve.getORxpath_desktop(this.OR,"CVS_Minute_Clinic_Home_Page","wlmTxt_InputZipField",browser_type); 
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_zip);      
+        status=await new operations().input(this.driver,'',xpath_zip,Zip);  
+        status=await new operations().wait(this.driver,3000);
+		
+xpath_dob=await dbretrieve.getORxpath_desktop(this.OR,"CVS_Minute_Clinic_Home_Page","wln_TxtDOB",browser_type); 
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_dob);      
+        status=await new operations().input(this.driver,'',xpath_dob,date);  
+        status=await new operations().wait(this.driver,3000);    
+        
+        xpath=await dbretrieve.getORxpath_desktop(this.OR,"CVS_Minute_Clinic_Home_Page","wln_Getstarted_btn",browser_type); 
+        status=await new operations().waitForDisplayed(this.driver,'',xpath);
+        status=await new operations().click(this.driver,'',xpath);
+        status=await new operations().wait(this.driver,2000);    
+       // status=await new operations().wait(this.driver,9000);
+
+xpath_next_day = "(//*[@class='button-div'])[2]";
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_next_day);
+        status=await new operations().click(this.driver,'',xpath_next_day);
+        status=await new operations().wait(this.driver,9000);    
+        //status=await new operations().wait(this.driver,9000);
+		
+	}
+}
+}
+Given(/^user select first avaiable time slot from schedule$/, {timeout: 300 * 2000}, async function (Zip,date){
+    var stepStatus = ''; status = await new commons().clearStepStatus();
+    logMsg ='user select first avaiable time slot from schedule';     
+    try{       
+        if (config.essentials.accessibility === true) {
+            let accessResults = await new operations().existPlusAccessibility(this.driver, '', xpath);
+            let accessReportName = 'accessbilityReport|' + Math.random() + '|' + config.essentials.scenario;
+            var temp_access_report_list = [];
+            if (config.essentials.report['access_report_list']) { temp_access_report_list = config.essentials.report['access_report_list']; }
+            temp_access_report_list.push(accessReportName);
+            config.essentials.report['access_report_list'] = temp_access_report_list;
+            config.essentials.report[accessReportName] = accessResults;
+        }
+       await new operations().wait(this.driver,5000);
+
+        xpath_time=await dbretrieve.getORxpath_desktop(this.OR,"CVS_Minute_Clinic_Home_Page","wln_timeSelect_btn",browser_type); 
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_time);
+        status=await new operations().click(this.driver,'',xpath_time);
+        status=await new operations().wait(this.driver,9000);    
+        status=await new operations().wait(this.driver,9000);
+	}
+}
+	
+	
+	Given(/^user enter firstName "([^"]*)" lastName "([^"]*)" address "([^"]*)" City "([^"]*)" state "([^"]*)" and zip code  "([^"]*)" to submit the form$/, {timeout: 300 * 2000}, async function (firstname,lastname,addressLine1,city,state,zipcode){
+    var stepStatus = ''; status = await new commons().clearStepStatus();
+    logMsg ='user enter firstName "([^"]*)" lastName "([^"]*)" address "([^"]*)" City "([^"]*)" state "([^"]*)" and zip code  "([^"]*)" to submit the form';     
+    try{       
+        if (config.essentials.accessibility === true) {
+            let accessResults = await new operations().existPlusAccessibility(this.driver, '', xpath);
+            let accessReportName = 'accessbilityReport|' + Math.random() + '|' + config.essentials.scenario;
+            var temp_access_report_list = [];
+            if (config.essentials.report['access_report_list']) { temp_access_report_list = config.essentials.report['access_report_list']; }
+            temp_access_report_list.push(accessReportName);
+            config.essentials.report['access_report_list'] = temp_access_report_list;
+            config.essentials.report[accessReportName] = accessResults;
+        }
+       await new operations().wait(this.driver,5000);
+		xpath_firstName = '//*[@id="firstName"]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_firstName);      
+        status=await new operations().input(this.driver,'',xpath_firstName,"test");  
+        status=await new operations().wait(this.driver,3000);    
+
+
+        xpath_lastName = '//*[@id="lastName"]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_lastName);      
+        status=await new operations().input(this.driver,'',xpath_lastName,"test");  
+        status=await new operations().wait(this.driver,3000);
+		
+		xpath_addressLine1 = '//*[@id="addressLine1"]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_addressLine1);      
+        status=await new operations().input(this.driver,'',xpath_addressLine1,"test");  
+        status=await new operations().wait(this.driver,3000);    
+
+        xpath_city = '//*[@id="city"]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_city);      
+        status=await new operations().input(this.driver,'',xpath_city,"test");  
+        status=await new operations().wait(this.driver,3000);
+		
+		xpath_state = '//*[@id="stateProvider"]/option[2]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_state);      
+        status=await new operations().click(this.driver,'',xpath_state);  
+        status=await new operations().wait(this.driver,3000);    
+
+        xpath_zipCode = '//*[@id="zipCode"]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_zipCode);      
+        status=await new operations().input(this.driver,'',xpath_zipCode,Zip);  
+        status=await new operations().wait(this.driver,3000);
+
+
+// xpath_gender = '//*[@id="gender-female"]';
+       xpath_gender =  '//*[@id="gender"]/label[1]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_gender);
+        status=await new operations().click(this.driver,'',xpath_gender);
+        status=await new operations().wait(this.driver,5000);      
+
+        xpath_race = '//*[@id="raceProvider"]/option[2]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_race);
+        status=await new operations().click(this.driver,'',xpath_race);
+        status=await new operations().wait(this.driver,5000);
+
+
+xpath_ethincity = '//*[@id="ethnicityProvider"]/option[2]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_ethincity);      
+        status=await new operations().click(this.driver,'',xpath_ethincity);
+        status=await new operations().wait(this.driver,5000);     
+
+        xpath_relationship = '//*[@id="relationShipToPatient"]/option[2]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_relationship);      
+        status=await new operations().click(this.driver,'',xpath_relationship);
+        status=await new operations().wait(this.driver,5000);
+
+
+// xpath_primaryPhone_radio = '//*[@id="isPrimaryNumber-yes"]';
+       // xpath_primaryPhone_radio =  '//*[@id="isPrimaryNumber-yes"]/label[1]';
+        xpath_primaryPhone_radio = '//*[@id="scheduler-form"]/form/div[4]/div/fieldset/label[1]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_primaryPhone_radio);
+        status=await new operations().click(this.driver,'',xpath_primaryPhone_radio);
+        status=await new operations().wait(this.driver,5000);   
+
+       // xpath_authorize = '//*[@id="vmConsent-yes"]';
+        xpath_authorize = '//*[@id="vmConsent"]/label[1]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_authorize);
+        status=await new operations().click(this.driver,'',xpath_authorize);
+        status=await new operations().wait(this.driver,5000);
+
+
+xpath_is_first_covid = '//*[@id="firstCovidTest"]/label[1]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_is_first_covid);
+        status=await new operations().click(this.driver,'',xpath_is_first_covid);
+        status=await new operations().wait(this.driver,5000);   
+
+       
+        xpath_is_pregnant = '//*[@id="isPregnant"]/label[contains(text(),"Yes")]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_is_pregnant);
+        status=await new operations().click(this.driver,'',xpath_is_pregnant);
+        status=await new operations().wait(this.driver,5000);
+
+
+
+xpath_healthcare = '//*[@id="isEmpInHealthcare"]/label[1]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_healthcare);
+        status=await new operations().click(this.driver,'',xpath_healthcare);
+        status=await new operations().wait(this.driver,5000);   
+
+        xpath_resident = '//*[@id="congregate"]/label[1]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_resident);
+        status=await new operations().click(this.driver,'',xpath_resident);
+        status=await new operations().wait(this.driver,5000);
+
+
+xpath_hypertension = '//*[@id="hypertension"]/label[1]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_hypertension);
+        status=await new operations().click(this.driver,'',xpath_hypertension);
+        status=await new operations().wait(this.driver,5000);  
+
+	}	
+	}
+}	
+Given(/^user submit the Account details as AccountNo "" ExpiryMOnth "" ExpiryYear "" CVV ""$/, {timeout: 300 * 2000}, async function (AccountNo,ExpiryMonth,ExpiryYear,CVV){
+	
+	var stepStatus = ''; status = await new commons().clearStepStatus();
+    logMsg ='user enter firstName "([^"]*)" lastName "([^"]*)" address "([^"]*)" City "([^"]*)" state "([^"]*)" and zip code  "([^"]*)" to submit the form';     
+    try{       
+        if (config.essentials.accessibility === true) {
+            let accessResults = await new operations().existPlusAccessibility(this.driver, '', xpath);
+            let accessReportName = 'accessbilityReport|' + Math.random() + '|' + config.essentials.scenario;
+            var temp_access_report_list = [];
+            if (config.essentials.report['access_report_list']) { temp_access_report_list = config.essentials.report['access_report_list']; }
+            temp_access_report_list.push(accessReportName);
+            config.essentials.report['access_report_list'] = temp_access_report_list;
+            config.essentials.report[accessReportName] = accessResults;
+        }
+        xpath_accountNumberframe = '//*[@id="eProtect-iframe"]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_accountNumberframe);   
+        status=await new operations().switchToIframe(this.driver,'',xpath_accountNumberframe);
+        status=await new operations().wait(this.driver,5000);
+
+
+xpath_accountNumber = '//*[@id="accountNumber"]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_accountNumber);   
+        status=await new operations().scroll_To_Object(this.driver,'',xpath_accountNumber);
+        status=await new operations().wait(this.driver,5000);     
+        status=await new operations().input(this.driver,'',xpath_accountNumber,"AccountNo");  
+        status=await new operations().wait(this.driver,3000);  
+
+
+        xpath_expMonth = '//*[@id="expMonthDiv"]//option[12]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_expMonth);      
+        status=await new operations().click(this.driver,'',xpath_expMonth);
+        status=await new operations().wait(this.driver,5000);
+
+xpath_expYear = '//*[@id="expYear"]//option[contains(text(),"+ExpiryYear+")]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_expYear);      
+        status=await new operations().click(this.driver,'',xpath_expYear);
+        status=await new operations().wait(this.driver,5000); 
+
+        xpath_cvv = '//*[@id="cvv"]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_cvv);      
+        status=await new operations().input(this.driver,'',xpath_cvv,CVV);  
+        status=await new operations().wait(this.driver,3000); 
+        await driver.switchToParentFrame();
+		
+		xpath_billing = '//*[@id="paymentSection"]//label[contains(text(),"Billing address is the same as above.")]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_billing);      
+        status=await new operations().click(this.driver,'',xpath_billing);
+        status=await new operations().wait(this.driver,5000);
+
+
+xpath_permissionToNotify = '//*[@id="permissionToNotify"]/label[1]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_permissionToNotify);      
+        status=await new operations().click(this.driver,'',xpath_permissionToNotify);
+        status=await new operations().wait(this.driver,5000); 
+
+        xpath_phiDisclosure = '//*[@id="phiDisclosure"]/label[1]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_phiDisclosure);      
+        status=await new operations().click(this.driver,'',xpath_phiDisclosure);
+        status=await new operations().wait(this.driver,5000);
+
+
+xpath_trialConsent = '//*[@id="trialConsent"]//label[contains(text(),"Yes")]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_trialConsent);      
+        status=await new operations().click(this.driver,'',xpath_trialConsent);
+        status=await new operations().wait(this.driver,5000); 
+
+        xpath_consentToPayCashB2BHI = '//*[@id="label-consentToPayCashB2BHI"]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_consentToPayCashB2BHI);      
+        status=await new operations().click(this.driver,'',xpath_consentToPayCashB2BHI);
+        status=await new operations().wait(this.driver,5000);
+		
+		
+		xpath_consentToTreatCOVID19 = '//*[@id="label-consentToTreatCOVID19"]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_consentToTreatCOVID19);      
+        status=await new operations().click(this.driver,'',xpath_consentToTreatCOVID19);
+        status=await new operations().wait(this.driver,5000); 
+
+        xpath_consentForInsuranceB2BHI = '//*[@id="label-consentForInsuranceB2BHI"]';
+        status=await new operations().waitForDisplayed(this.driver,'',xpath_consentForInsuranceB2BHI);      
+        status=await new operations().click(this.driver,'',xpath_consentForInsuranceB2BHI);
+        status=await new operations().wait(this.driver,5000);
+
+
+// xpath_submit  = '//*[@class="form-buttons"]//button[1]';    
+        // status=await new operations().waitForDisplayed(this.driver,'',xpath_submit);
+        // status=await new operations().click(this.driver,'',xpath_submit);
+        // status=await new operations().wait(this.driver,5000);
+
+
+
+}
+}
+}
